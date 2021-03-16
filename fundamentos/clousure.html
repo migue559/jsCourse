@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Clase 392 - Cousure</title>
+  </head>
+  <body>
+    <script>
+      
+
+      //clousures
+      function crearSaludo(finalFrase) {
+        return function frase(nombre)      {
+          console.log(`HOla ${nombre} eres un ${finalFrase}`)
+
+        }      
+      }
+
+
+      const saludoArgentino=crearSaludo('che')
+      const saludoMexicano=crearSaludo('wey')
+      const saludoColombiano=crearSaludo('amigo')
+
+
+
+      saludoArgentino('Migue')
+      saludoMexicano('Migue')
+      saludoColombiano('Migue')
+
+
+    // inmutables
+    const migue ={
+      nombre:'migue',
+      apellido:'cruz',
+      edad:33,
+      altura:1.78
+    }
+
+    const  compleanos = persona => persona.edad++
+    const  compleanosInmutable = persona => ({
+        ...persona,
+        edad:persona.edad+1
+    })
+
+
+    //bind cambiando el contexto this
+    function saludar(){
+      console.log(`Hola vato loco ${this.nombre}`)
+
+    }
+
+    const saludarMigue = saludar.bind(migue)
+
+    //cuando es necesario escribir ; en js   ... Recuerda ; es opcional no se usa comunmete salvo estos casos
+
+    console.log("miguegdyusgsuo");
+    [1,2,3,4].map(value => console.log(value *2))  // o puede ponerse el ; el inicio del arreglo
+
+    const sacha ='sacha'
+    console.log("miguegdyusgsuo 2321321321321");
+    `${sacha} es un desarrollador`
+
+    function calculaDoble (numero){
+
+      return {                                               // si existe un enter es como si existiera un ;   return   
+        primero:numero,segundo:numero*numero                 // {primero:numero,segundo:numero*numero
+
+      }
+    }
+
+
+    
+
+
+    </script>
+  </body>
+</html>
